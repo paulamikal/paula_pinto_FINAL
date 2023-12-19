@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+<br>
+{% block content %}
+<center><h2>Formulario de Registro de Institución</h2></center>
+  <form method="post" action="{% url 'formulario_institucion' %}">
+    {% csrf_token %}
+    <table class="table">
+      {{ form.as_table }}
+    </table>
+    <center><button type="submit" class="btn btn-primary">Registrar Institución</button></center>
+  </form>
+{% endblock %}

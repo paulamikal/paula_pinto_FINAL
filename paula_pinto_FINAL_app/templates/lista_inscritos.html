@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Listado de Inscritos</h2>
+<ul>
+  {% for inscrito in object_list %}
+      <li><a href="{% url 'lista_inscritos' %}">{{ inscrito.nombre }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+</body>
+
+</html>

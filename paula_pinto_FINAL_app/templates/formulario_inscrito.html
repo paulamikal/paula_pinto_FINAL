@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+<br>
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="text-align: center;">Formulario de Inscripción</h2>
+        <form method="post" action="{% url 'formulario_inscrito' %}" class="form" style="width: 100%;">
+          {% csrf_token %}
+          <table class="table">
+            {{ form.as_table }}
+          </table>
+          <br>
+          <center><button type="submit" class="btn btn-primary">Inscribirse</button></center>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

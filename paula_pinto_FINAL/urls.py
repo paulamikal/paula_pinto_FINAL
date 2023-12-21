@@ -17,18 +17,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from paula_pinto_FINAL_app.views import (index, formulario_inscritoView, formulario_institucionView,
-                                         lista_inscritos, lista_instituciones, inscrito_serializer, institucion_serializer, inscrito_APIView, institucion_APIView, autor)
+                                         lista_inscritos, lista_instituciones, inscrito_serializer, institucion_serializer, lista_inscritosAPI, lista_institucionesAPI, autor, RetrieveAPIView)
 from rest_framework.routers import DefaultRouter
+
 router = DefaultRouter()
 
 urlpatterns = [
     path('', index.as_view(), name='index'),
-    path('formulario_inscrito/', formulario_inscritoView.as_view(), name='formulario_inscrito'),
-    path('formulario_institucion/', formulario_institucionView.as_view(), name='formulario_institucion'),
+    path('formulario_inscrito/', formulario_inscritoView.as_view(),
+         name='formulario_inscrito'),
+    path('formulario_institucion/', formulario_institucionView.as_view(),
+         name='formulario_institucion'),
     path('lista_inscritos/', lista_inscritos.as_view(), name='lista_inscritos'),
-    path('lista_instituciones', lista_instituciones.as_view(), name='lista_instituciones'),
-    #path('api/v1/', include(router.urls)),
-    path('api/v1/inscritos/', inscrito_APIView.as_view(), name='inscrito_api'),
-    path('api/v1/institucion/', institucion_APIView.as_view(), name='institucion_api'),
-    path('api/v1/autor/', autor, name='autor'), #se le agrega a la url normal, http://127.0.0.1:8000/api/v1/autor/
+    path('lista_instituciones', lista_instituciones.as_view(),
+         name='lista_instituciones'),
+    path('api/v1/lista_inscritos/',
+         lista_inscritosAPI.as_view(), name='inscrito_api'),
+    path('api/v1/lista_institucion/',
+         lista_institucionesAPI.as_view(), name='institucion_api'),
+    # se le agrega a la url normal, http://127.0.0.1:8000/api/v1/autor/
+    path('api/v1/autor/', autor, name='autor'),
 ]

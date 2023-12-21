@@ -20,20 +20,23 @@
         <div class="navbar-text ml-auto bg-info text-white p-3">
           {% block autor_detail %}
           <center><strong>SEMINARIO GASTRONOMICO</strong></center>
-          {% endblock %}
         </div>
         <br>
         <p><center><strong>Se parte de nuestro seminario gastronomico, edicion 2023</strong></center></p>
         <center><img src="{% static '2.PNG' %}" width="200px" height="200px"></center>
         <center>
           <p></p>
-          <a href="{% url 'formulario_inscrito' %}" class="btn btn-success">Inscribirse</a>
-          <a href="{% url 'formulario_institucion' %}" class="btn btn-success">Inscribir instituciones</a>
-          <a href="{% url 'lista_inscritos' %}" class="btn btn-warning">Listar Inscritos</a>
-          <a href="{% url 'lista_instituciones' %}" class="btn btn-warning">Listar Instituciones</a>
-          
+          <a href="{% url 'autor' %}" class="btn btn-primary mr-2">Listar Datos Autor (Json)</a>
+          <p></p>
+          <a href="{% url 'formulario_inscrito' %}" class="btn btn-warning">Inscribirse</a>
+          <p></p>
+          <a href="{% url 'formulario_institucion' %}" class="btn btn-danger mr-2">Inscribir instituciones</a>
+          <p></p>
+          <a href="{% url 'lista_inscritos' %}" class="btn btn-secondary mr-2">Listar Inscritos(Class Based Views)</a>
+          <p></p>
+          <a href="{% url 'lista_institucion' %}" class="btn btn-info">Listar Instituciones (Función Based Views)</a>
+          {% endblock %}
         </center>
-
       </div>
     </div>
   </div>
